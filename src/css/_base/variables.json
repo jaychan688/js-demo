@@ -1,0 +1,19 @@
+{
+	"green-100": "#F0FDF4",
+	"green-400": "#A3E635",
+	"red-400": "#F87171",
+	"orange-400": "#FB923C",
+	"orange-300": "#FDBA74",
+	"amber-300": "#FCD34D",
+	"yellow-300": "#FDE047",
+	"sky-400": "#38BDF8",
+	"teal-400": "#2DD4BF",
+	"blue-grey-400": "#ccc",
+	"blue-grey-500": "#5f7d8c",
+	"blue-grey-600": "#536e7b",
+	"blue-grey-700": "#445a65",
+	"blue-grey-800": "#37474f",
+	"blue-grey-900": "#253238",
+	"mainBlue": "#2f5572",
+	"mainOrange": "#d59541"
+}

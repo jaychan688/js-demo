@@ -1,0 +1,53 @@
+
+/* Collapsible */
+.collapsible {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__heading {
+		/* remove h2 top margin */
+		margin-top: 0;
+		font-size: 3rem;
+	}
+
+	&__toggler {
+		cursor: pointer;
+		transition: transform 0.3s;
+		/* Rotate arrow icon right 90 degree, 
+		means the content are collapse.
+		the default state */
+		transform: rotate(-90deg);
+	}
+
+	/*  
+		Implement collapsible functionality 
+		collapsible__content, collapsible__toggle work together.
+*/
+	&__content {
+		/* This is a trick for animation, Because transition do accept display property */
+		overflow: hidden;
+		max-height: 0;
+		opacity: 0;
+		transition: all 0.3s;
+	}
+
+	/* 
+	
+	If has this class in top level (outer container), 
+	then can rotate the toggler and show the content 
+	*/
+	&--expanded {
+		.collapsible__content {
+			/* Set max-height, actual height will determinate by it's content */
+			max-height: 100%;
+			opacity: 1;
+		}
+		/* Using collapsible--expanded class control toggler icon rotate and show the content area */
+		.collapsible__toggler {
+			/* Arrow icon point down, means expand the content */
+			transform: rotate(0);
+		}
+	}
+}

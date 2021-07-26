@@ -1,0 +1,20 @@
+.generic-content-container {
+	/* 
+    Keep the style scoped to this class
+    and all of it's descendants being styled a specific way.
+    Not BEM way 
+    */
+	p {
+		font-weight: 300;
+		line-height: 1.7;
+		margin: 0 0 1rem 0;
+
+		@mixin sm {
+			font-size: 2rem;
+		}
+	}
+
+	p a {
+		font-weight: 700;
+	}
+}

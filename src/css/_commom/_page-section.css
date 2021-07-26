@@ -1,0 +1,37 @@
+/* 
+	Reusable block class 
+	Each section is a block, and can be reuse.
+	ex. beginning block, feature block, testimonial block
+*/
+.page-section {
+	padding: 1.2rem 0;
+
+	@mixin md {
+		padding: 4.5rem 0;
+	}
+
+	&--blue {
+		background: $mainBlue;
+		color: #fff;
+	}
+
+	&--no-b-padding-until-medium {
+		padding-bottom: 0;
+
+		@mixin md {
+			padding-bottom: 4.5rem;
+		}
+	}
+
+	&--no-b-padding-until-large {
+		/* 
+		In small screen, don't need the bottom gap
+		between testimonial and footer section.
+		*/
+		padding-bottom: 0;
+
+		@mixin lg {
+			padding-bottom: 4.5rem;
+		}
+	}
+}

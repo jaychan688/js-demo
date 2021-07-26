@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+body {
+	margin: 0;
+	font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.list {
+	display: flex;
+	max-width: 1000px;
+	padding: 2rem;
+	margin: 0 auto;
+	list-style: none;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	&:nth-child(1) {
+		border-bottom: 5px dotted #000;
+	}
+
+	&__item {
+		display: inline-block;
+		background: dodgerblue;
+		border-radius: 10px;
+		text-decoration: none;
+		padding: 1rem;
+		font-weight: bold;
+		font-size: 1.5rem;
+		color: #ffffff;
+		transition: background color 0.3s;
+		&:hover {
+			color: #000;
+			background: tomato;
+		}
+	}
+
+	&--pink {
+		background: lightpink;
+	}
+
+	&--green {
+		background: lightgreen;
+	}
+}

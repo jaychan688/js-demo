@@ -1,0 +1,26 @@
+
+/* Links */
+a {
+	text-decoration: none;
+}
+
+.link-arrow {
+	color: var(--color-accent);
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: bold;
+
+	@mixin lg {
+		font-size: 1.5rem;
+	}
+
+	&::after {
+		content: '-->';
+		margin-left: 5px;
+		transition: margin 0.15s;
+	}
+
+	&:hover::after {
+		margin-left: 10px;
+	}
+}

@@ -1,0 +1,75 @@
+
+/* NavBar */
+.nav {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	/* Push logo and icon to the both side of edge of container*/
+	justify-content: space-between;
+	padding: 0 1rem;
+	background-color: #000000;
+
+	&__list {
+		/* remove extra margin of <ul>  */
+		margin: 0;
+		/* width:100%, combine with flex-wrap can push the <ul> into second line */
+		width: 100%;
+
+		@mixin md {
+			/* change the <li> default behavior, lay all .nav_item horizontally */
+			display: flex;
+			/* Medium screen: the.nav_list show always show, tricks from collapsible__content */
+			max-height: 100%;
+			/* width: auto, stretch enough to fits it's content */
+			width: auto;
+			font-size: 1.6rem;
+			opacity: 1;
+		}
+	}
+
+	&__brand {
+		/* Move the logo 5px down, make it looks like center vertically */
+		transform: translateY(5px);
+		width: 150px;
+	}
+
+	&__item {
+		padding: 0.5rem 2rem;
+		border-bottom: 1px solid #222222;
+
+		@mixin md {
+			border: 0; /* In medium screen, set the border to 0 */
+		}
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+
+		& > a {
+			/* Same with the testimonial, always put <a> inside .nav__item*/
+			color: #d2d0db;
+			transition: color 0.3s;
+		}
+
+		& > a:hover {
+			color: #ffffff;
+		}
+	}
+
+	&__icon {
+		opacity: 0.5;
+		cursor: pointer;
+		transition: box-shadow 0.15s;
+		/* Hide the icon in medium screen */
+		@mixin md {
+			display: none;
+		}
+	}
+}
+/* double class selector to make more specific */
+.nav.collapsible--expanded .nav__icon {
+	border-radius: 5px;
+	box-shadow: 0 0 0 3px #666666;
+	/*  double class selector, make it more explicit, only apply in NavBar */
+	opacity: 1;
+}
