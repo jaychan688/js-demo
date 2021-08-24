@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { entries, plugins } = require('./hwp-config')
 
 const isProduction = process.env.NODE_ENV || false
-const target = isProduction ? 'browserslist' : 'web'
 const devtool = isProduction ? false : 'source-map'
 const mode = isProduction || 'development'
 
@@ -23,7 +22,6 @@ const config = {
 	entry: entries,
 	plugins,
 	mode,
-	target,
 	devtool,
 	module: {
 		rules: [
@@ -61,11 +59,10 @@ if (!isProduction) {
 	}
 
 	config.devServer = {
-		// Middleware:  html auto reload - full page reload
-		before: (app, server) => {
-			server._watch('./src/**/*.html')
+		watchFiles: ['./src/**/*.html'],
+		static: {
+			directory: path.join(__dirname, 'dist'),
 		},
-		contentBase: path.join(__dirname, 'dist'),
 		hot: true,
 		port: 3000,
 		historyApiFallback: true,
